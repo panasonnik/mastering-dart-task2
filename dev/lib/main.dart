@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'models/person.dart';
 
 void main() {
   runApp(MaterialApp(
