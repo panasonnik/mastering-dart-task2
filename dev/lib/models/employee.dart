@@ -19,13 +19,14 @@ class Employee extends Person with Celebrate {
 
   double get salary => _salary;
 
-  Map<String, Function> manageSalary(double salary, double percentage) {
+  Map<String, Function> manageSalary(double percentage) {
+    //функції замикання
     void increase() {
-      salary *= 1 + percentage / 100;
+      _salary *= (1 + percentage / 100.0);
     }
 
     void decrease() {
-      salary -= salary * percentage / 100;
+      _salary -= (_salary * percentage / 100.0);
     }
 
     return {'increase': increase, 'decrease': decrease};

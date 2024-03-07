@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import 'mixins.dart';
 
 class Person with Celebrate {
@@ -21,6 +23,11 @@ class Person with Celebrate {
     } else {
       throw ArgumentError('Age must be greater than 0!');
     }
+  }
+
+  void greet(String name, [String greeting = 'Welcome']) {
+    //параметр за замовчуванням
+    debugPrint('$greeting, $name!');
   }
 
   @override
