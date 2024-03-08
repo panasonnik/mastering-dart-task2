@@ -1,9 +1,12 @@
+import 'package:flutter/material.dart';
+
 import 'mixins.dart';
 import 'person.dart';
 
 class Employee extends Person with Celebrate {
   double _salary;
   int? _vacationDays;
+  double _premium = 10.0;
 
   Employee(super.firstName, super.lastName, super.age, this._salary,
       {int? vacationDays}) //make nullable, because optional
@@ -30,5 +33,15 @@ class Employee extends Person with Celebrate {
     }
 
     return {'increase': increase, 'decrease': decrease};
+  }
+
+  double get premium => _premium;
+  set premium(double premium) {
+    try {
+      assert(premium >= 0, 'Premium must be greater than or equal to 0!');
+      _premium = premium;
+    } catch (e) {
+      debugPrint('Assertion failed: $e');
+    }
   }
 }
