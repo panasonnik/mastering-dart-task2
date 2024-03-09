@@ -21,7 +21,8 @@ void main() {
 
   e1.premium = 20.0; //assert
   debugPrint(e1.premium.toString());
-
+  debugPrint("----------");
+  debugPrint(e1.celebrateBirthday(e1.age).toString());
   Person p1 = Person("Amy", "Q", 23);
   Person p2 = Person("Bob", "Vance", 57);
   Person p3 = Person("Celia", "James", 40);

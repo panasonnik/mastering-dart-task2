@@ -1,5 +1,8 @@
+import 'package:flutter/material.dart';
+
 mixin Celebrate {
   int celebrateBirthday(int age) {
-    return ++age;
+    debugPrint("Yay! Celebrate!");
+    return age;
   }
 }

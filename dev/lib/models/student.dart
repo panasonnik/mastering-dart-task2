@@ -1,6 +1,5 @@
 import 'package:dev/models/first_course_student.dart';
 
-import 'mixins.dart';
 import 'person.dart';
 
 class Student extends Person {
@@ -8,6 +7,15 @@ class Student extends Person {
   Student(super.firstName, super.lastName, super.age, this._examPoints,
       this._labsPoints)
       : _totalPoints = _examPoints + _labsPoints; //конструктор ініціалізації
+
+  int get examPoints => _examPoints;
+  set examPoints(int points) {
+    _examPoints =
+        (points > 40 && points < 60) ? (points * 1.2).toInt() : points;
+  }
+
+  int get labsPoints => _labsPoints;
+  set labsPoints(int points) => _labsPoints = points;
 
   factory Student.create(String type, String firstName, String lastName,
       int age, int exam, int labs) {
